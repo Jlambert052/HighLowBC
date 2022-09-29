@@ -1,0 +1,5 @@
+C:\repos\C#Projects\HighLowBC\bin\release\net6.0\publish\GuessNumberGame.exe
+C:\repos\C#Projects\HighLowBC\bin\release\net6.0\publish\GuessNumberGame.dll
+C:\repos\C#Projects\HighLowBC\bin\release\net6.0\publish\GuessNumberGame.deps.json
+C:\repos\C#Projects\HighLowBC\bin\release\net6.0\publish\GuessNumberGame.runtimeconfig.json
+C:\repos\C#Projects\HighLowBC\bin\release\net6.0\publish\GuessNumberGame.pdb
