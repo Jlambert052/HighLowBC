@@ -79,7 +79,7 @@ namespace GuessNumberGame;
                     System.Console.WriteLine($"Correct! You are spot on. The number is {num} and it took you {tries} attempts");
                     if(tries < 10) 
                     System.Console.WriteLine("You did that very quickly; well done!");
-                    if(tries > 10 && tries < 25)
+                    if(tries >= 10 && tries < 25)
                     System.Console.WriteLine("Not bad, but I have seen better.");
                     if (tries > 25)
                     System.Console.WriteLine("Yikes, that was pretty bad.");
