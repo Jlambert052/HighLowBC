@@ -50,13 +50,12 @@ namespace GuessNumberGame;
                 while(Guess != num) {
                     input = Console.ReadLine();
                     Guess = Convert.ToInt32(input);
-                    tries ++;
-                if(Guess > MaxNum || Guess < 1) {
-                    System.Console.WriteLine("Invalid number; try again");
+                while(Guess > MaxNum | Guess < 1) {
+                    System.Console.WriteLine($"Invalid number; try again between 1 and {MaxNum}");
                     input = Console.ReadLine();
                     Guess = Convert.ToInt32(input);
-                    tries ++;
                 }
+                    tries ++;
                 if(Guess > num && Guess - num >= 50) {
                     System.Console.WriteLine("You are not very close; too high.");
                 }
