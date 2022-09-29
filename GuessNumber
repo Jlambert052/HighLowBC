@@ -1,0 +1,33 @@
+namespace GuessNumberGame;
+
+    public class GuessNumber {
+
+        Random random = new();
+        
+        private int GenerateNum() {
+         
+            int Guess = random.Next(1, 11);
+            return Guess;
+        }
+        private int GuessAnswer() {
+            int playerNum;
+            System.Console.WriteLine("Enter your guess: ");
+            string playerEntry = Console.ReadLine();
+            if(!int.TryParse(playerEntry, out playerNum)) {
+                throw new Exception ("Not a readable number; enter a new number in numeric form (5, not five)");
+            }
+            return playerNum;
+
+        }
+
+        public int PlayGuessNumber() {
+            int Guess = GenerateNum();
+            System.Console.WriteLine("Guess the number, from 1 to 10! Enter your guess as a number");
+            int PlayerGuess = GuessAnswer();
+            
+                while(PlayerGuess != Guess) {
+                    
+                }
+            
+        }
+    }
