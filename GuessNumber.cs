@@ -66,10 +66,10 @@ namespace GuessNumberGame;
                 if(Guess > num && Guess - num <= 10) {
                     System.Console.WriteLine("You are very close; too high.");
                 }
-                if(Guess < num && num - Guess >= 50 && num - Guess < 50) {
+                if(Guess < num && num - Guess >= 50) {
                     System.Console.WriteLine("You are not very close; too low.");
                 }
-                if(Guess < num && num - Guess >= 10) {
+                if(Guess < num && num - Guess >= 10 && num - Guess < 50) {
                     System.Console.WriteLine("You are close; too low.");
                 }
                 if(Guess < num && num - Guess <= 10) {
