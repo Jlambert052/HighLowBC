@@ -15,6 +15,8 @@ namespace GuessNumberGame;
             return Number;
         }
 
+
+
         public int GuessingGameEasy() {
             int num = GenerateNumLow();
             int Guess = 0;
@@ -40,7 +42,28 @@ namespace GuessNumberGame;
 
         }
 
-        public int GuessingGameVariable(int MaxNum) {
+        public int ReplayGame() {
+                        System.Console.WriteLine("Would you like to play again? Enter Y for yes, or N for no");
+            string? replay = Console.ReadLine();
+            if(replay == "Y") {
+                System.Console.WriteLine("Enter your new Max value to set;");
+                    string? newMax = Console.ReadLine();
+                    int ReplayNum = Convert.ToInt32(newMax);
+                    return ReplayNum;
+            }
+            if(replay == "N") {
+            System.Console.WriteLine("Thank you for playing!");
+            System.Threading.Thread.Sleep(1000);
+            return 0;
+            }
+            else if (replay != "Y" || replay != "N") {
+                System.Console.WriteLine("Try again; invalid selection");
+                    ReplayGame();
+            }
+            return 0;
+        }
+
+        public void GuessingGameVariable(int MaxNum) {
             System.Console.WriteLine("Welcome to High/Low! Your range is set by what you passed into the game.");
                 int num = GenerateNum(MaxNum);
                 int Guess = 0;
@@ -48,6 +71,7 @@ namespace GuessNumberGame;
                 string? input;
                 System.Console.WriteLine($"I am thinking of a number between 1 to {MaxNum}, can you guess it quickly?");
                 while(Guess != num) {
+
                     input = Console.ReadLine();
                     Guess = Convert.ToInt32(input);
                 while(Guess > MaxNum | Guess < 1) {
@@ -74,6 +98,8 @@ namespace GuessNumberGame;
                 if(Guess < num && num - Guess <= 10) {
                     System.Console.WriteLine("You are very close; too low.");
                 }
+                //need something for if the user inputs a letter/not a number.
+                }
                 if(Guess == num) { 
                     System.Console.WriteLine($"Correct! You are spot on. The number is {num} and it took you {tries} attempts");
                     if(tries < 10) 
@@ -83,18 +109,11 @@ namespace GuessNumberGame;
                     if (tries > 25)
                     System.Console.WriteLine("Yikes, that was pretty bad.");
                 }
+            MaxNum = ReplayGame();
+            if(MaxNum > 0) {
+                GuessingGameVariable(MaxNum);
+            }
+            return;
 
-            }
-            System.Console.WriteLine("Would you like to play again? Enter Y for yes, or N for no");
-            string? replay = Console.ReadLine();
-            if(replay == "Y") {
-                System.Console.WriteLine("Enter your new Max value to set;");
-                    string? newMax = Console.ReadLine();
-                    MaxNum = Convert.ToInt32(newMax);
-                    GuessingGameVariable(MaxNum);
-            }
-            System.Console.WriteLine("Thank you for playing!");
-            System.Threading.Thread.Sleep(1000);
-            return Guess;
         }
     }
