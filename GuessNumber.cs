@@ -64,7 +64,7 @@ namespace GuessNumberGame;
         }
 
         public void GuessingGameVariable(int MaxNum) {
-            System.Console.WriteLine("Welcome to High/Low! Your range is set by what you passed into the game.");
+            System.Console.WriteLine("Welcome to High/Low!");
                 int num = GenerateNum(MaxNum);
                 int Guess = 0;
                 int tries = 0;
